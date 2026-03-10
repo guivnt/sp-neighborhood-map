@@ -1,12 +1,12 @@
 district,distance_to_nubank,safety,walkability,traffic,rent_price,buy_price,green_spaces,nightlife,family_friendly,public_transport,notes
-PINHEIROS,10,6,9,5,3,3,7,9,6,10,Nubank HQ. Fradique Coutinho (L4) at doorstep. Vibrant but phone snatch risk near bars and Faria Lima is real.
+PINHEIROS,10,6,9,4,3,3,7,9,6,10,Nubank HQ. Fradique Coutinho (L4) at doorstep. Faria Lima is among SP's most congested arteries. Phone snatch risk near bars is real.
 ALTO DE PINHEIROS,9,9,7,6,4,3,8,5,8,7,Quiet upper-residential streets, very low foot-traffic density. One of the safer areas in the city near Nubank.
 PERDIZES,8,8,8,6,5,4,7,6,8,8,Sumaré (L2) nearby. Primarily residential with good schools. Lower commercial density keeps street robbery rates moderate-low.
 VILA MADALENA,8,6,10,5,4,4,6,10,5,9,Vila Madalena (L2) station. Dense nightlife elevates phone robbery at night near Rua Wisard/Harmonia. Safe during the day.
-JARDIM PAULISTA,7,8,9,5,2,2,7,7,7,8,Includes Jardins area. Near Consolação (L2). High private security presence. Low robbery occurrence rates in SSP data.
-CONSOLAÇÃO,7,6,9,5,5,5,5,8,5,9,Consolação (L2). Paulista Ave foot traffic and bar scene elevate phone theft risk. Exercise caution at night and near metro exits.
-BELA VISTA,7,6,9,5,5,5,5,8,6,8,Historical Bixiga. Trianon-Masp (L2) nearby. Busy restaurant streets raise opportunistic theft. Not dangerous but stay aware.
-REPÚBLICA,6,3,8,5,7,7,4,7,4,8,One of SP's highest street robbery concentrations. Major transit hub, high homeless presence and tourist foot traffic. Phone theft very common.
+JARDIM PAULISTA,7,8,9,4,2,2,7,7,7,8,Includes Jardins area. Near Consolação (L2). High private security presence. Paulista Ave congestion affects the district. Low robbery occurrence rates in SSP data.
+CONSOLAÇÃO,7,6,9,4,5,5,5,9,5,9,Consolação (L2). Rua Augusta is SP's densest nightlife street — score reflects that. Paulista congestion and bar crowds elevate phone theft risk at night.
+BELA VISTA,7,6,9,4,5,5,5,8,6,8,Historical Bixiga. Trianon-Masp (L2) nearby. Paulista Ave and Av. Brigadeiro cause significant congestion. Busy restaurant streets raise opportunistic theft.
+REPÚBLICA,6,3,8,4,7,7,4,7,4,8,One of SP's highest street robbery concentrations. Downtown congestion + major transit hub + homeless presence + tourist foot traffic. Phone theft very common.
 LIBERDADE,7,6,9,5,6,6,4,7,6,8,Liberdade (L1). Downtown adjacent. Market streets attract pickpockets. Safer than República but vigilance needed.
 CAMBUCI,7,6,7,6,7,7,5,6,7,6,Transitional residential. Lower foot traffic than nearby downtown. Improving safety trend. No metro but bus connections to Paraíso.
 SANTA CECÍLIA,7,6,9,5,6,6,4,8,5,8,Santa Cecília (L2). Bar scene and proximity to República elevates risk at night. Caution near Largo do Arouche.
@@ -14,7 +14,7 @@ BARRA FUNDA,6,5,7,5,6,6,5,6,5,9,Barra Funda (L2 + CPTM L8/L9). Excellent multi-m
 VILA LEOPOLDINA,7,7,7,6,5,5,6,5,6,6,CPTM L9 (Villa Lobos-Jaguaré). Quiet residential, low occurrence rates. Expat community growing. Good value near Pinheiros.
 LAPA,7,6,8,6,6,6,5,6,6,7,Lapa (L3 + CPTM). Traditional bairro. Commercial hub at Largo da Lapa has pickpocketing. Residential streets generally calm.
 VILA ROMANA,7,7,7,6,6,6,5,5,7,6,Mostly residential, low commercial density. Fewer street robbery occurrences than neighboring Lapa center. Good value.
-ITAIM BIBI,6,6,9,5,3,3,6,8,6,5,Faria Lima restaurant terraces are a known phone snatch hotspot. High-value pedestrian targets. No metro station nearby.
+ITAIM BIBI,6,6,9,3,3,3,6,8,6,5,Faria Lima + Av. Brigadeiro + Juscelino: some of SP's worst traffic. Restaurant terraces are a known phone snatch hotspot. No metro nearby.
 MOEMA,7,8,9,5,3,3,9,6,8,8,Moema (L5). Leafy and upscale. Low homicide rate, moderate phone theft near mall entrances. Among the safer south-zone profiles.
 CAMPO BELO,6,8,8,6,4,4,7,5,8,8,Campo Belo (L5). Quiet upper-middle residential. Low street robbery rates. Less commercial density = fewer targets.
 SANTO AMARO,4,6,7,6,6,6,5,5,7,7,Santo Amaro (L5 + CPTM). Southern commercial hub. Shopping malls drive moderate street robbery. Not alarming but not negligible.
@@ -97,3 +97,5 @@ VILA MATILDE,3,6,6,5,7,7,5,4,7,7,Vila Matilde (L3). East-zone residential with d
 VILA MEDEIROS,3,6,5,5,8,8,5,3,7,5,North zone residential. Quiet. Limited urban amenities. Moderate commute. Good family environment.
 VILA PRUDENTE,4,6,6,5,7,7,6,5,7,8,Vila Prudente (L2 eastern terminus). Direct Line 2 to Consolação/Pinheiros direction — one of the best transit values in the east zone. Gentrifying.
 VILA SÔNIA,5,7,6,5,7,7,6,5,7,8,Vila Sônia (L4 Yellow — direct line to Fradique Coutinho/Nubank). Underrated western residential with the most direct metro link to Nubank outside Pinheiros itself.
+SÃO LUCAS,4,6,6,5,7,7,7,4,7,7,East-zone residential in Vila Prudente subprefecture. Borders Ipiranga and Parque do Estado (large green area nearby). Near Vila Prudente (L2) for direct access to Consolação/Pinheiros direction. Quiet working-class neighborhood with improving infrastructure.
+GUAIANASES,1,5,5,6,10,10,4,2,6,7,Eastern terminus of L3 (alternate spelling used in some GeoJSON sources). Very affordable, metro-connected but commute to Nubank exceeds one hour. Not practical for daily in-office work.
