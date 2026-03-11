@@ -15,6 +15,9 @@
   <!-- chroma.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"></script>
 
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -31,6 +34,19 @@
           <span>High</span>
         </div>
       </div>
+    </div>
+
+    <!-- Compare Panel -->
+    <div id="compare-panel" class="compare-panel-closed">
+      <div id="compare-header">
+        <span class="compare-title">Compare Districts</span>
+        <button id="compare-close-btn" class="btn btn-secondary btn-xs">✕</button>
+      </div>
+      <div id="compare-districts-list"></div>
+      <div id="compare-chart-container">
+        <canvas id="compare-chart"></canvas>
+      </div>
+      <p id="compare-hint">Click districts on the map and use the checkbox to add them. Up to 4.</p>
     </div>
 
     <!-- Sidebar -->
@@ -79,7 +95,10 @@
         </section>
 
         <section class="sidebar-section" id="district-detail" style="display:none">
-          <h3>District Detail</h3>
+          <div class="detail-section-header">
+            <h3>District Detail</h3>
+            <button id="compare-toggle-btn" class="btn btn-secondary btn-xs">Compare</button>
+          </div>
           <div id="detail-content"></div>
         </section>
 

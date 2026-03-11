@@ -38,6 +38,20 @@ let districtData = {};   // key: normalized district name → scores object
 let geoLayer = null;
 let mapOpacity = 0.82;
 
+// Compare mode state
+let compareMode = false;
+let compareDistricts = []; // [{ rawName, normName }, ...], max 4
+let radarChart = null;
+let currentDetailRawName = null;
+let currentDetailNormName = null;
+
+const COMPARE_COLORS = [
+  { fill: 'rgba(194,110,240,0.2)', border: '#c26ef0' }, // purple
+  { fill: 'rgba(34,204,68,0.2)',   border: '#22cc44' }, // green
+  { fill: 'rgba(255,204,0,0.2)',   border: '#ffcc00' }, // yellow
+  { fill: 'rgba(255,100,68,0.2)',  border: '#ff6444' }, // orange-red
+];
+
 // ============================================================
 // Map init
 // ============================================================
@@ -140,8 +154,8 @@ function onEachFeature(feature, layer) {
       layer.setStyle({ weight: 2.5, fillOpacity: 0.88, color: '#c26ef0' });
       layer.getTooltip() && layer.closeTooltip();
       layer.bindTooltip(
-        `<div class="district-tooltip"><b>${rawName}</b>Score: ${score} / 10</div>`,
-        { sticky: true, permanent: false, opacity: 1, className: '' }
+        `<div class="district-tooltip"><b>${rawName}</b>Score: <span class="tooltip-score">${score} / 10</span></div>`,
+        { sticky: true, permanent: false, opacity: 1, className: 'dark-tooltip' }
       ).openTooltip(e.latlng);
     },
     mouseout() {
@@ -175,6 +189,9 @@ function openPopup(rawName, name, layer) {
 // District detail sidebar panel
 // ============================================================
 function showDistrictDetail(rawName, normName) {
+  currentDetailRawName = rawName;
+  currentDetailNormName = normName;
+
   const panel = document.getElementById('district-detail');
   const content = document.getElementById('detail-content');
   const district = districtData[normName];
@@ -197,17 +214,156 @@ function showDistrictDetail(rawName, normName) {
     ? `<div class="detail-notes">${district.notes}</div>`
     : '';
 
+  const alreadyAdded = compareDistricts.some(d => d.normName === normName);
+  const atMax = compareDistricts.length >= 4 && !alreadyAdded;
+  const checkboxHTML = compareMode ? `
+    <div class="compare-checkbox-row">
+      <label class="compare-checkbox-label">
+        <input type="checkbox" id="compare-checkbox"
+          ${alreadyAdded ? 'checked' : ''}
+          ${atMax ? 'disabled' : ''} />
+        Add to comparison
+        ${atMax ? '<span class="compare-max-hint">(max 4)</span>' : ''}
+      </label>
+    </div>` : '';
+
   content.innerHTML = `
     <div class="detail-name">${rawName}</div>
     <div class="detail-score">${score.toFixed(1)} <span>/ 10 composite</span></div>
+    ${checkboxHTML}
     <div class="detail-bars">${bars}</div>
     ${notes}
   `;
+
+  if (compareMode) {
+    const checkbox = document.getElementById('compare-checkbox');
+    if (checkbox) {
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          if (!compareDistricts.some(d => d.normName === normName)) {
+            compareDistricts.push({ rawName, normName });
+          }
+        } else {
+          compareDistricts = compareDistricts.filter(d => d.normName !== normName);
+        }
+        renderCompareDistrictsList();
+        updateRadarChart();
+        showDistrictDetail(rawName, normName);
+      });
+    }
+  }
 
   panel.style.display = 'block';
 
   // Scroll sidebar to detail panel
   panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// ============================================================
+// Compare panel functions
+// ============================================================
+function initRadarChart() {
+  const ctx = document.getElementById('compare-chart').getContext('2d');
+  radarChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+      labels: CRITERIA.map(c => c.label),
+      datasets: [],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { display: false },
+      },
+      scales: {
+        r: {
+          min: 0,
+          max: 10,
+          ticks: {
+            stepSize: 2,
+            color: '#a080c0',
+            backdropColor: 'transparent',
+            font: { size: 9 },
+          },
+          grid: { color: '#2a0040' },
+          angleLines: { color: '#2a0040' },
+          pointLabels: {
+            color: '#f0e6fa',
+            font: { size: 9 },
+          },
+        },
+      },
+    },
+  });
+}
+
+function updateRadarChart() {
+  if (!radarChart) return;
+  radarChart.data.datasets = compareDistricts.map((d, i) => {
+    const district = districtData[d.normName];
+    const data = CRITERIA.map(({ key }) =>
+      district && district[key] != null ? parseFloat(district[key]) : DEFAULT_DISTRICT_SCORE
+    );
+    const color = COMPARE_COLORS[i % COMPARE_COLORS.length];
+    return {
+      label: d.rawName,
+      data,
+      backgroundColor: color.fill,
+      borderColor: color.border,
+      borderWidth: 2,
+      pointBackgroundColor: color.border,
+      pointRadius: 3,
+    };
+  });
+  radarChart.update();
+}
+
+function renderCompareDistrictsList() {
+  const list = document.getElementById('compare-districts-list');
+  list.innerHTML = '';
+  compareDistricts.forEach((d, i) => {
+    const color = COMPARE_COLORS[i % COMPARE_COLORS.length];
+    const chip = document.createElement('div');
+    chip.className = 'compare-chip';
+    chip.innerHTML = `
+      <span class="compare-chip-dot" style="background:${color.border}"></span>
+      <span class="compare-chip-name">${d.rawName}</span>
+      <button class="compare-chip-remove" data-norm="${d.normName}">✕</button>
+    `;
+    chip.querySelector('.compare-chip-remove').addEventListener('click', () => {
+      compareDistricts = compareDistricts.filter(x => x.normName !== d.normName);
+      renderCompareDistrictsList();
+      updateRadarChart();
+      if (currentDetailNormName === d.normName || currentDetailNormName) {
+        showDistrictDetail(currentDetailRawName, currentDetailNormName);
+      }
+    });
+    list.appendChild(chip);
+  });
+}
+
+function openComparePanel() {
+  const panel = document.getElementById('compare-panel');
+  panel.classList.remove('compare-panel-closed');
+  panel.classList.add('compare-panel-open');
+  if (!radarChart) initRadarChart();
+  renderCompareDistrictsList();
+  updateRadarChart();
+  setTimeout(() => map.invalidateSize(), 310);
+}
+
+function closeComparePanel() {
+  const panel = document.getElementById('compare-panel');
+  panel.classList.remove('compare-panel-open');
+  panel.classList.add('compare-panel-closed');
+  compareMode = false;
+  const toggleBtn = document.getElementById('compare-toggle-btn');
+  if (toggleBtn) {
+    toggleBtn.textContent = 'Compare';
+    toggleBtn.classList.remove('compare-toggle-active');
+  }
+  setTimeout(() => map.invalidateSize(), 310);
 }
 
 // ============================================================
@@ -346,6 +502,31 @@ sidebarToggle.addEventListener('click', () => {
   sidebarBody.classList.toggle('collapsed');
   sidebarToggle.classList.toggle('open');
   sidebarToggle.textContent = sidebarBody.classList.contains('collapsed') ? '▲' : '▼';
+});
+
+// ============================================================
+// Compare panel event listeners
+// ============================================================
+document.getElementById('compare-toggle-btn').addEventListener('click', () => {
+  compareMode = !compareMode;
+  const btn = document.getElementById('compare-toggle-btn');
+  if (compareMode) {
+    btn.textContent = 'Done';
+    btn.classList.add('compare-toggle-active');
+    openComparePanel();
+  } else {
+    closeComparePanel();
+  }
+  if (currentDetailRawName) {
+    showDistrictDetail(currentDetailRawName, currentDetailNormName);
+  }
+});
+
+document.getElementById('compare-close-btn').addEventListener('click', () => {
+  closeComparePanel();
+  if (currentDetailRawName) {
+    showDistrictDetail(currentDetailRawName, currentDetailNormName);
+  }
 });
 
 // ============================================================
