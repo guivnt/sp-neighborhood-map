@@ -1,5 +1,4 @@
 FROM nginx:alpine
-FROM python:3.13-slim AS runtime
 
 # Template processado automaticamente pelo nginx (usa $PORT do Railway)
 COPY nginx.conf /etc/nginx/templates/default.conf.template
