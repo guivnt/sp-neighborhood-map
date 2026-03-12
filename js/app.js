@@ -21,7 +21,6 @@ const CRITERIA = [
   { key: 'green_spaces',       label: 'Green Spaces',       weight: 1 },
   { key: 'nightlife',          label: 'Nightlife',          weight: 0.5 },
   { key: 'family_friendly',    label: 'Family Friendly',    weight: 0.5 },
-  { key: 'healthcare',         label: 'Healthcare Access',  weight: 1 },
 ];
 
 // Weight per criterion (mutable by sliders)

@@ -29,7 +29,6 @@ relocation research, not a substitute for on-the-ground investigation.
 | `nightlife` | 1–10 | Bars, restaurants, cultural venues |
 | `family_friendly` | 1–10 | Schools, playgrounds, residential safety |
 | `notes` | string | Free-text rationale, caveats, and local knowledge |
-| `healthcare` | 1–10 | Public primary-care access: wait time for basic consultation (10 = shortest) |
 
 All scores are **1–10 where 10 is always best for the resident** (cost and
 congestion are inverted: 10 = very affordable / very low traffic).
@@ -49,7 +48,6 @@ real time:
 | Walkability | 1.5× | Quality-of-life multiplier |
 | Low Traffic | 1× | Affects commute and daily errands |
 | Affordable Rent | 1× | Major financial factor |
-| Healthcare Access | 1× | Access to public primary care |
 | Green Spaces | 1× | Quality of life |
 | Affordable Purchase | 0.5× | Longer-term consideration |
 | Nightlife | 0.5× | Personal preference |
@@ -58,6 +56,56 @@ real time:
 ---
 
 ## Primary Data Sources
+
+### SSP-SP Dados Criminais (2022–2024)
+
+The **Secretaria de Segurança Pública do Estado de São Paulo** publishes annual
+crime statistics as bulk Excel files at:
+
+```
+https://www.ssp.sp.gov.br/assets/estatistica/transparencia/spDados/SPDadosCriminais_{year}.xlsx
+```
+
+Files are available for 2022, 2023, 2024, and 2025 (partial). Each file
+contains individual Boletim de Ocorrência (BO) records for the entire state.
+
+The relevant field is **`roubo_outros`** (street robbery — muggings, phone
+snatching, pedestrian robbery), aggregated at delegacia (police precinct) level
+for the **DECAP** (Departamento de Polícia da Capital) — the 93 precincts
+covering São Paulo municipality.
+
+| Indicator | Source field | Used for |
+|---|---|---|
+| `roubo_outros` (annual total per delegacia) | `SPDadosCriminais_{year}.xlsx`, filtered by DECAP | Street-robbery score for safety audit |
+
+The 93 DECAP delegacias were mapped to the 96 IBGE administrative districts.
+Some districts are served by multiple delegacias (e.g. Campo Limpo by 3 DPs);
+counts were summed. Annual averages over 2022–2024 were then normalized by
+approximate 2022 IBGE census population per district to produce a
+**roubo per 100k residents** rate.
+
+Reference robbery tiers (per 100k residents, annual average 2022–2024):
+
+| Roubo/100k | Robbery score | Example districts |
+|---|---|---|
+| ≥ 2,000 | 1 | Sé (3,578), Campos Elíseos (2,731), Pari (2,382) |
+| 1,400–2,000 | 2 | — |
+| 900–1,400 | 3 | Brás (1,208) |
+| 600–900 | 4 | Campo Limpo (741), Lapa (678), Jaçanã (635), Cambuci (625) |
+| 400–600 | 5 | Capão Redondo (544), Santo Amaro (493), Santana (471) |
+| 250–400 | 6 | Itaim Bibi (339), Jardim Paulista (336), São Mateus (263) |
+| 150–250 | 7 | Penha (228), Jabaquara (230), Cidade Tiradentes (233) |
+| 80–150 | 8 | Vila Mariana (148), Carrão (147), Pirituba (106) |
+| 40–80 | 9 | — |
+| < 40 | 10 | Brasilândia (38) |
+
+The final `safety` score blends 50% homicide-based score + 50% robbery score,
+with a ±2-point cap to prevent over-correction. 34 districts without delegacia
+data keep their homicide-only scores.
+
+Source: [SSP-SP — SPDadosCriminais (direct bulk download)](https://www.ssp.sp.gov.br/assets/estatistica/transparencia/spDados/)
+
+---
 
 ### Mapa da Desigualdade 2024 — Rede Nossa São Paulo
 
@@ -79,9 +127,6 @@ and `healthcare` columns. The raw data is available at:
 |---|---|---|
 | Homicídios por 100k habitantes | `homicidios_per100k` | Safety audit |
 | % domicílios em favelas | `favelas_pct_domicilios` | Safety audit (downward cap) |
-| Espera para consulta básica (dias) | `espera_consulta_basica_dias` | Healthcare score |
-| Idade média ao morrer (anos) | `idade_media_morte` | Healthcare fallback (3 districts) |
-| Mortalidade infantil (por 1k nascidos) | `mortalidade_infantil_per1k` | Healthcare fallback (3 districts) |
 
 ---
 
@@ -115,18 +160,18 @@ Sources:
 
 ### safety
 
-Safety scores were **audited against the Mapa da Desigualdade 2024** using two
-official indicators per district:
+Safety scores are derived from **three official data sources**, blended in two
+audit passes:
 
-1. **Homicídios por 100k habitantes** (from SIM/SEADE, via SMS-SP) — primary
-   signal for lethal violence risk.
+#### Pass 1 — Homicide + Favela audit (Mapa da Desigualdade 2024)
+
+1. **Homicídios por 100k habitantes** (SIM/SEADE via SMS-SP, 2020 data) —
+   primary signal for lethal violence risk.
 2. **% domicílios em favelas** — structural vulnerability indicator; high favela
    share caps the safety ceiling even when homicide rates are moderate.
 
-The audit algorithm converts homicide rate to a data-driven target score, applies
-a favela-share cap where warranted, and then constrains the move to ±2 points from
-the previous score to preserve street-robbery knowledge not captured by homicide
-data alone (critical for high-footfall areas like Sé, Brás, and República).
+The algorithm converts homicide rate to a data-driven target score, applies a
+favela-share cap, and constrains the move to ±2 points.
 
 Reference homicide tiers (per 100k residents):
 
@@ -140,55 +185,38 @@ Reference homicide tiers (per 100k residents):
 | 1.5–3 | 7 | Pinheiros (1.5), Consolação (1.7), Perdizes (2.6) |
 | < 1.5 | 8 | Moema (0.0), Vila Mariana (0.0), Cambuci (0.0) |
 
-Two districts were manually overridden after algorithmic review:
-- **Alto de Pinheiros**: algorithm suggested 7; set to 8 (0% favelas, consistently cited as one of SP's safest areas in SSP bulletins)
-- **Vila Romana**: Lapa data used as proxy overstates violence; set to 6
+Two districts were manually overridden after this pass:
+- **Alto de Pinheiros**: algorithm suggested 7; set to 8 (0% favelas, consistently safe)
+- **Vila Romana**: Lapa proxy overstates violence; set to 6
+
+#### Pass 2 — Street robbery audit (SSP-SP Dados Criminais 2022–2024)
+
+3. **Roubo_outros per 100k residents** — muggings, phone snatching, and
+   pedestrian robbery aggregated from 93 DECAP delegacias, averaged over
+   2022–2024, normalized by approximate 2022 IBGE census population.
+
+Robbery score tiers: see table in the SSP-SP data source section above.
+
+**Final formula** (for 62 districts with robbery data):
+```
+safety = round(0.5 × homicide_score + 0.5 × robbery_score)
+         capped at ±2 from post-pass-1 score
+```
+34 districts without delegacia coverage retain their pass-1 scores.
+
+**Key insight:** robbery and homicide risks can diverge significantly.
+Peripheral districts like Brasilândia have high homicide rates but very low
+robbery per capita (38/100k) — few outsiders visit, reducing street robbery.
+Conversely, high-footfall central districts like Sé (3,578/100k), Pinheiros
+(661/100k), and Consolação (563/100k) have low homicide but very high robbery.
+The blended score better represents the actual daily safety experience for
+a resident or commuter.
 
 Sources:
+- [SSP-SP — SPDadosCriminais bulk XLSX](https://www.ssp.sp.gov.br/assets/estatistica/transparencia/spDados/)
 - [Mapa da Desigualdade 2024 — data download](https://www.cidadessustentaveis.org.br/arquivos/RNSP/mapa_da_desigualdade_2024_dados.xlsx)
-- [SSP-SP — Estatísticas](https://www.ssp.sp.gov.br/estatistica)
 - [SSP-SP — Portal de Transparência](https://www.ssp.sp.gov.br/transparenciassp/Apresentacao.aspx)
-- [SSP-SP — Dados Mensais por Distrito](https://www.ssp.sp.gov.br/estatistica/dados-mensais)
 - [Base dos Dados — SSP dataset (BigQuery-ready)](https://basedosdados.org/dataset/dbd717cb-7da8-4efd-9162-951a71694541)
-
-### healthcare
-
-Measures access to **public primary healthcare** using the
-**espera para consulta básica (dias)** indicator from the Mapa da Desigualdade
-2024 — the average number of days a resident must wait for a basic consultation
-appointment at a UBS (Unidade Básica de Saúde).
-
-Score conversion (10 = shortest wait = best access):
-
-| Wait time (days) | Score |
-|---|---|
-| 0–4 | 10 |
-| 5–8 | 9 |
-| 9–12 | 8 |
-| 13–16 | 7 |
-| 17–20 | 6 |
-| 21–24 | 5 |
-| 25–28 | 4 |
-| 29–32 | 3 |
-| 33–36 | 2 |
-| 37+ | 1 |
-
-Three districts where wait-time data was absent in the Mapa
-(Alto de Pinheiros, Consolação, Jardim Paulista) use a proxy score derived from
-`idade_media_morte` (average age at death) and `mortalidade_infantil_per1k`
-(infant mortality per 1k live births) from the same dataset.
-
-Three districts not present in the Mapa da Desigualdade (Vila Madalena, Vila
-Romana, Belenzinho) use wait-time data from their closest same-subprefeitura
-neighbor as a proxy (Pinheiros, Lapa, and Mooca respectively).
-
-Notable range:
-- **Score 10**: República (0 days — major hospital cluster including Santa Casa), Morumbi (3 days), Vila Sônia (4 days), Marsilac (4 days)
-- **Score 1**: Campo Grande (39 days), Cidade Líder (39 days), Santana (37 days)
-
-Sources:
-- [Mapa da Desigualdade 2024 — data download](https://www.cidadessustentaveis.org.br/arquivos/RNSP/mapa_da_desigualdade_2024_dados.xlsx)
-- [CEInfo Boletim Saúde em Dados 2023 — SMS-SP](https://drive.prefeitura.sp.gov.br/cidade/secretarias/upload/saude/arquivos/ceinfo/tabelas/Tabelas_CEInfo_Dados_Sub_2023.xlsx)
 
 ### walkability
 
@@ -316,33 +344,27 @@ score improvements:
    its homicídios indicator from SIM/SEADE mortality records. 2020 is the most
    recent year available at district granularity.
 
-2. **Mobile phone robbery is not explicitly scored.** SSP-SP publishes monthly
-   `roubo de celular` counts by delegacia (police precinct), but this was not
-   incorporated. Phone snatching risk does not perfectly track homicide rates —
-   high-footfall central districts (Sé, República, Brás) score low on homicides
-   but are known robbery hotspots. The ±2-point cap on score changes during the
-   audit was intended to preserve this street-level intuition, but the underlying
-   original scores were not derived from formal robbery statistics.
-   See: [SSP-SP — Dados Mensais por Distrito](https://www.ssp.sp.gov.br/estatistica/dados-mensais)
+2. **Robbery data covers 62 of 96 districts.** The SSP-SP delegacia boundaries
+   do not map cleanly to all 96 IBGE districts; 34 districts have no direct
+   delegacia coverage in the dataset and retain homicide-only safety scores.
+   `roubo de celular` (phone snatching specifically) is not a separate SSP-SP
+   aggregate column — it is captured within `roubo_outros`. The `roubo_outros`
+   field covers all street robberies (muggings, phone theft, pedestrian robbery)
+   and is a robust proxy for the phone-snatching risk a resident faces daily.
 
-3. **Healthcare score measures public UBS access only.** Districts with low
-   scores (e.g. Liberdade, Santana) have poor public primary-care coverage but
-   are well served by private clinics and hospitals. The score is most relevant
-   for residents relying on the SUS public health system.
-
-4. **Three districts use proxy data.** Vila Madalena (→ Pinheiros proxy),
+3. **Three districts use proxy data for safety.** Vila Madalena (→ Pinheiros proxy),
    Vila Romana (→ Lapa proxy), and Belenzinho (→ Mooca proxy) were absent from
-   the Mapa da Desigualdade. Their safety and healthcare scores may be less
-   accurate than the 93 directly measured districts.
+   the Mapa da Desigualdade. Their safety scores may be less accurate than the
+   93 directly measured districts.
 
-5. **Rent/buy scores are district-level averages.** Itaim Bibi includes both
+4. **Rent/buy scores are district-level averages.** Itaim Bibi includes both
    the very expensive Vila Olímpia and more affordable pockets. Morumbi spans
    from luxury condos to streets bordering Paraisópolis.
 
-6. **Transit scores reflect the 2024–2025 network.** SP is expanding Lines 5,
+5. **Transit scores reflect the 2024–2025 network.** SP is expanding Lines 5,
    6, 17, 19, and 20. New stations will shift transit scores when they open.
 
-7. **Walkability has no formal per-district index.** Scores are based on urban
+6. **Walkability has no formal per-district index.** Scores are based on urban
    knowledge cross-referenced with the ITDP iCam framework.
 
 ---

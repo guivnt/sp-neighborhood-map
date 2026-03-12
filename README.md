@@ -44,8 +44,8 @@ All scores are **1–10** (10 = best for living). The composite score is a weigh
 | Criterion | Default weight | Notes |
 |---|---|---|
 | Distance to Nubank | 2× | 10 = walking distance to Pinheiros office |
-| Public Transport | 2× | 10 = direct metro to Oscar Freire (L2), closest station to Nubank |
-| Safety | 1.5× | Based on SSP-SP crime data patterns |
+| Public Transport | 2× | 10 = direct metro to Oscar Freire (L4), closest station to Nubank |
+| Safety | 1.5× | Blended score: homicide rate + street robbery per capita (SSP-SP 2022–2024) |
 | Walkability | 1.5× | Pedestrian infrastructure and mixed-use density |
 | Low Traffic | 1× | 10 = very low congestion |
 | Affordable Rent | 1× | 10 = very affordable |
@@ -60,6 +60,8 @@ Districts not present in the CSV default to **5** for all criteria.
 
 `data/neighborhoods.csv` is a plain spreadsheet — open it in Excel, Numbers, or Google Sheets, edit any scores, save, then use the **Load CSV** button in the sidebar to apply your changes without touching any code.
 
+For full documentation on scoring methodology, data sources, and how each criterion was derived, see [`data/README.md`](data/README.md).
+
 If you want to persist your changes for everyone, edit the CSV and open a PR.
 
 ## Data disclaimer
@@ -69,8 +71,8 @@ The default scores in `data/neighborhoods.csv` were generated with AI assistance
 ## Data sources
 
 - **District polygons**: [codigourbano/distritos-sp](https://github.com/codigourbano/distritos-sp) — SP's 96 official IBGE districts, fetched at runtime
-- **Safety scores**: Derived from SSP-SP crime bulletin patterns (homicide rate, roubo a pedestre, furto/roubo de celular by district)
-- **Transit scores**: Based on SP Metro and CPTM network proximity and transfer count to Oscar Freire (L2), the closest station to Nubank
+- **Safety scores**: Blended from homicide rate (Mapa da Desigualdade 2024) and street robbery per capita (SSP-SP Dados Criminais 2022–2024, 93 DECAP delegacias)
+- **Transit scores**: Based on SP Metro and CPTM network proximity and transfer count to Oscar Freire (L4), the closest station to Nubank
 - **Map tiles**: CartoDB Dark Matter via OpenStreetMap
 
 ## Tech stack
