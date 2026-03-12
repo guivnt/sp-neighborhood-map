@@ -66,10 +66,15 @@ You need Python 3 (pre-installed on macOS) or any static file server. **Do not o
 ```bash
 git clone https://github.com/pedro-luiz-santoro/sp-neighborhood-map.git
 cd sp-neighborhood-map
+
+# Option 1: Docker (recommended for deployment)
+docker build -t sp-map . && docker run -p 8000:8000 sp-map
+
+# Option 2: Python static server
 python3 -m http.server 8080
 ```
 
-Then open [http://localhost:8080](http://localhost:8080) in your browser.
+Then open [http://localhost:8000](http://localhost:8000) (Docker) or [http://localhost:8080](http://localhost:8080) (Python) in your browser.
 
 **Alternative servers** (if you prefer):
 

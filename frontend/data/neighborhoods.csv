@@ -1,0 +1,100 @@
+district,distance_to_nubank,safety,walkability,traffic,rent_price,buy_price,green_spaces,nightlife,family_friendly,public_transport,notes
+PINHEIROS,10,6,9,4,3,3,7,9,6,10,Nubank HQ. Oscar Freire (L4 Yellow) at doorstep. Faria Lima is among SP's most congested arteries. Phone snatch risk near bars is real.
+ALTO DE PINHEIROS,9,8,7,6,4,3,8,5,8,7,Quiet upper-residential streets. very low foot-traffic density. One of the safer areas in the city near Nubank.
+PERDIZES,8,6,8,6,5,4,7,6,8,8,Sumaré (L2) nearby. Primarily residential with good schools. Lower commercial density keeps street robbery rates moderate-low.
+VILA MADALENA,8,7,10,5,4,4,6,10,5,9,Vila Madalena (L2) station. Dense nightlife elevates phone robbery at night near Rua Wisard/Harmonia. Safe during the day.
+JARDIM PAULISTA,7,7,9,4,2,2,7,7,7,8,Includes Jardins area. Near Consolação (L2). High private security presence. Paulista Ave congestion affects the district. Low robbery occurrence rates in SSP data.
+CONSOLAÇÃO,7,6,9,4,5,5,6,9,5,9,Consolação (L2). Rua Augusta is SP's densest nightlife street — score reflects that. Paulista congestion and bar crowds elevate phone theft risk at night. Parque Siqueira Campos (Trianon) is located in this district on Alameda Santos.
+BELA VISTA,7,7,9,4,5,5,5,8,6,8,Historical Bixiga. Trianon-Masp (L2) nearby. Paulista Ave and Av. Brigadeiro cause significant congestion. Busy restaurant streets raise opportunistic theft.
+REPÚBLICA,6,4,8,4,7,7,4,7,4,8,One of SP's highest street robbery concentrations. Downtown congestion + major transit hub + homeless presence + tourist foot traffic. Phone theft very common.
+LIBERDADE,7,7,9,5,6,6,4,7,6,8,Liberdade (L1). Downtown adjacent. Market streets attract pickpockets. Safer than República but vigilance needed.
+CAMBUCI,7,6,7,6,7,7,5,6,7,6,Transitional residential. Lower foot traffic than nearby downtown. Improving safety trend. No metro but bus connections to Paraíso.
+SANTA CECÍLIA,7,6,9,5,6,6,4,8,5,8,Santa Cecília (L3). Bar scene and proximity to República elevates risk at night. Caution near Largo do Arouche.
+BARRA FUNDA,6,5,7,5,6,6,5,6,5,9,Barra Funda (L3 + CPTM L8/L9). Excellent multi-modal transit. Industrial character softening with gentrification but street crime remains.
+VILA LEOPOLDINA,7,6,7,6,5,5,6,5,6,6,CPTM L9 (Villa Lobos-Jaguaré). Quiet residential. low occurrence rates. Expat community growing. Good value near Pinheiros.
+LAPA,7,4,8,6,6,6,5,6,6,7,Lapa (CPTM L8/L9). Traditional bairro. Commercial hub at Largo da Lapa has pickpocketing. Residential streets generally calm.
+VILA ROMANA,7,6,7,6,6,6,5,5,7,6,Mostly residential. low commercial density. Fewer street robbery occurrences than neighboring Lapa center. Good value.
+ITAIM BIBI,6,7,9,3,2,2,6,8,6,5,Faria Lima + Av. Brigadeiro + Juscelino: some of SP's worst traffic. Restaurant terraces are a known phone snatch hotspot. No metro nearby. Includes Vila Olímpia — SP's most expensive sub-neighborhood (R$100–109/m² per QuintoAndar 2025 index).
+MOEMA,7,8,9,5,3,3,9,6,8,8,Moema (L5). Leafy and upscale. Low homicide rate. moderate phone theft near mall entrances. Among the safer south-zone profiles.
+CAMPO BELO,6,6,8,6,4,4,7,5,8,8,Campo Belo (L5). Quiet upper-middle residential. Low street robbery rates. Less commercial density = fewer targets.
+SANTO AMARO,4,6,7,6,6,6,5,5,7,7,Santo Amaro (L5 + CPTM). Southern commercial hub. Shopping malls drive moderate street robbery. Not alarming but not negligible.
+SAÚDE,5,6,7,6,6,6,6,4,8,8,Saúde (L1). Southern zone residential. Moderate safety profile. Lower robbery rates than central districts. Family-oriented blocks.
+JABAQUARA,4,6,6,6,7,7,5,4,7,8,Jabaquara (L1 terminus). Moderate crime. Commercial areas around the bus/metro terminal have higher occurrence rates.
+VILA MARIANA,6,8,9,5,5,5,7,6,7,9,Ana Rosa + Paraíso (L1+L2 interchange) nearby. Solid safety profile. Busy but not as dense as central SP.
+BELENZINHO,5,6,6,6,7,7,5,5,6,7,Belenzinho (L3). Higher robbery rates than west-zone equivalents. Improving but still above average for street crime.
+TATUAPÉ,4,6,8,6,6,6,5,6,7,8,Tatuapé (L3). East zone commercial hub. Busier streets have moderate theft rates. Residential streets calmer.
+MOOCA,5,6,7,6,6,6,5,5,7,7,Bresser-Mooca (L3). Gentrification in progress. Crime rates declining but elevated vs west-zone equivalents at similar price points.
+BRÁS,4,3,7,5,7,7,4,6,5,9,Among SP's highest phone robbery concentrations. Wholesale district + major transit hub (L3+CPTM) = very high-risk pedestrian zone.
+BOM RETIRO,5,5,8,5,7,7,4,6,5,8,Fashion district. Elevated street robbery. Proximity to Luz station complex (historically high crime) drags safety score down.
+SANTANA,4,5,7,6,6,6,5,5,7,8,Santana (L1) + Carandiru. Northern residential hub. Moderate safety. calmer than downtown. Good metro access.
+TUCURUVI,3,8,6,6,7,7,4,4,7,7,Tucuruvi (L1 northern terminus). Community feel. lower crime than downtown. Long commute to Pinheiros is the main trade-off.
+VILA GUILHERME,3,6,6,6,7,7,4,4,6,6,Northern zone. Moderate risk. Industrial corridor nearby affects some areas. Residential blocks reasonably calm. Far from Nubank.
+CASA VERDE,3,7,6,6,7,7,5,4,7,6,Northern residential. Lower crime than downtown equivalents. Community-oriented streets. Long commute is the main limitation.
+BUTANTÃ,6,6,7,6,6,6,6,5,7,8,Butantã (L4 Yellow — direct to Oscar Freire/Nubank). USP campus community. Moderate safety; areas near campus periphery have higher risk.
+MORUMBI,5,5,7,5,4,4,8,5,8,8,Highly uneven: gated condos vs areas bordering Paraisópolis favela. São Paulo-Morumbi (L4 Yellow) gives direct access to Oscar Freire/Nubank. Average masks very wide safety and quality-of-life variance.
+SÉ,5,2,7,3,9,8,5,6,3,10,Sé station (L1+L3 major interchange). Historic center with highest pedestrian crime in SP. Excellent transit; very poor safety and family profile.
+ÁGUA RASA,4,7,6,5,7,7,5,4,7,6,East-zone middle-class residential. Calm streets. Near bus corridors connecting to L3 (Tatuapé/Carrão). Affordable and stable.
+ARICANDUVA,3,7,5,4,8,8,7,3,7,5,East zone adjacent to Parque Aricanduva. Good green space. Av. Aricanduva is heavily congested. Working-class residential feel.
+ARTUR ALVIM,2,6,5,5,9,9,4,3,6,7,Artur Alvim (L3). Far east but metro-connected. Very affordable. Long commute to Nubank despite direct metro line.
+BELÉM,4,6,6,5,8,8,4,4,6,7,Belém (L3). East-zone traditional neighborhood between Brás and Mooca. Moderate crime profile; improving slowly.
+BRASILÂNDIA,2,6,4,6,10,10,5,3,5,4,Far northern periphery. Very affordable but limited urban infrastructure and significant safety challenges. No metro. bus-dependent.
+CACHOEIRINHA,3,4,5,5,8,8,5,3,7,5,North-zone residential. Working-class with decent community infrastructure. Bus-dependent; moderate commute.
+CAMPO GRANDE,3,6,6,5,7,7,5,4,7,6,South-zone commercial hub. Shopping malls and services. Reasonable bus connectivity but car-dependent for many trips.
+CAMPO LIMPO,3,4,5,5,8,8,5,3,6,7,Campo Limpo (L5). Working-class south zone. Metro Line 5 provides connectivity south but commute to Nubank involves transfers.
+CANGAÍBA,2,5,5,5,9,9,5,3,6,5,Far east zone residential. Very limited urban amenities. Bus-dependent with long commute to Nubank.
+CAPÃO REDONDO,2,4,5,5,9,9,5,3,5,7,Capão Redondo (L5 southern terminus). Metro access helps but still a very long commute. Some safety concerns in peripheral streets.
+CARRÃO,3,6,6,5,8,8,5,4,7,6,East-zone traditional residential. Stable working-class neighborhood. Near bus corridors. Calmer than commercial east-zone strips.
+CIDADE ADEMAR,2,5,4,6,9,9,5,3,6,4,Southern zone. Mostly bus-dependent. Very far from Nubank. Affordable but a significant daily commute.
+CIDADE DUTRA,2,6,4,5,9,9,6,3,6,5,Southern zone near Interlagos. Some green space near the racetrack. Long commute and limited urban services.
+CIDADE LÍDER,1,6,5,5,9,9,5,3,6,6,East zone near Itaquera (L3). Very far from Nubank. Metro accessible but at the extreme end of the commute.
+CIDADE TIRADENTES,1,6,4,6,10,10,4,2,5,5,Extreme eastern periphery. Largest social housing complex in Latin America. Very far from Nubank. Significant infrastructure gaps.
+CURSINO,4,8,6,5,7,7,6,4,7,6,South zone near Ipiranga. Quiet residential. CPTM access and bus corridors. Moderate commute. Stable neighborhood.
+ERMELINO MATARAZZO,1,6,5,5,9,9,4,3,6,5,Far eastern periphery. Very affordable but extremely long commute to Nubank and limited urban amenities.
+FREGUESIA DO Ó,4,6,6,5,7,7,6,4,6,5,North zone with some local commerce. Some proximity to Parque Estadual Anhanguera. Moderate connectivity. mostly bus-dependent.
+GRAJAÚ,2,5,5,5,9,9,8,3,5,4,Far southern zone near Guarapiranga reservoir. Beautiful green surroundings but very far from Nubank with limited transit.
+IGUATEMI,1,4,4,6,10,10,4,2,6,4,Far eastern periphery. Very limited urban infrastructure. Not practical for daily Nubank commute.
+IPIRANGA,4,6,6,5,7,7,7,5,7,7,Historic neighborhood with Parque da Independência. CPTM access. Gentrification underway. Moderate commute to Nubank.
+ITAIM PAULISTA,1,6,5,5,10,10,4,3,5,5,Far eastern periphery. Extremely affordable but poor infrastructure and very long commute.
+ITAQUERA,1,6,5,5,9,9,6,3,6,7,Itaquera (L3 terminus) + Arena Corinthians nearby. Metro-connected but commute to Pinheiros is 50+ minutes.
+JAÇANÃ,3,4,5,5,8,8,8,3,7,5,Northern zone near Serra da Cantareira. Quiet residential. good green space. Bus-dependent with moderate commute.
+JAGUARA,5,6,4,4,8,8,4,3,6,5,West-zone industrial district near Marginal Tietê. Limited walkability. Some residential pockets. Budget-friendly with decent connectivity.
+JAGUARÉ,6,6,5,5,7,7,8,4,7,6,West-zone residential near Parque Villa-Lobos. CPTM L9. Green surroundings. Moderate commute. Quiet neighborhood.
+JARAGUÁ,2,5,4,6,9,9,8,3,6,4,Far northwest near Pico do Jaraguá. Natural beauty nearby but very car-dependent and long commute to Nubank.
+JARDIM ÂNGELA,1,4,4,6,10,10,6,2,4,3,Historically one of SP's most dangerous districts. Significant improvement since peak crime years but still elevated. Very far from Nubank.
+JARDIM HELENA,1,5,4,6,10,10,4,2,5,4,Far eastern periphery. Very affordable but poor infrastructure and very long commute. Limited bus coverage.
+JARDIM SÃO LUÍS,2,4,4,6,9,9,5,3,5,5,Southern periphery near Campo Limpo (L5). Affordable but significant infrastructure gaps and long commute to Nubank.
+JOSÉ BONIFÁCIO,1,4,5,5,9,9,5,3,6,6,Far east near Itaquera. Bus corridors and some metro access. Very affordable; very long commute.
+LAJEADO,1,6,4,6,10,10,4,2,5,4,Eastern periphery. Very poor urban infrastructure. Extreme commute and safety concerns. Not recommended for Nubank relocation.
+LIMÃO,4,7,5,5,8,8,5,4,7,5,Northern zone residential. Affordable and stable. Bus-dependent with moderate commute. Near Casa Verde.
+MANDAQUI,4,7,6,5,8,8,7,4,8,6,Northern zone. Quiet residential with genuinely good safety profile. Proximity to Cantareira provides green space. Family-friendly.
+MARSILAC,1,4,2,9,10,10,10,1,5,1,Southernmost district — almost entirely within environmental protection zone. No meaningful urban infrastructure. Completely impractical for Nubank commute.
+PARELHEIROS,1,6,3,8,10,10,9,2,5,2,Rural far-south district in environmental protection area. No viable commute to Nubank. Not suitable for relocation.
+PARI,5,3,6,4,9,9,3,4,4,7,Small industrial district adjacent to Brás wholesale hub. Near Brás metro/CPTM (L3+CPTM). High pedestrian crime from Brás spills over.
+PARQUE DO CARMO,2,6,5,5,9,9,9,3,7,6,East zone centered on Parque do Carmo — one of SP's largest parks. Good green space. Long commute to Nubank is the key constraint.
+PEDREIRA,2,5,4,6,9,9,5,3,5,4,Southern zone. Limited urban infrastructure. Affordable but car-dependent and far from Nubank.
+PENHA,3,6,7,5,7,7,5,5,7,7,Penha (L3). East-zone commercial hub with good local services. Traditional neighborhood. Moderate commute to Nubank.
+PERUS,2,5,4,6,9,9,7,3,6,6,Far northwest. CPTM L7 access. Near Parque Anhanguera. Very affordable but long commute and limited urban infrastructure.
+ANHANGUERA,1,3,3,7,10,10,7,2,5,3,SP's northernmost district. Industrial and logistics zone near Anhanguera highway. No viable daily commute to Nubank.
+PIRITUBA,3,6,5,5,8,8,6,3,6,6,Northwest zone. CPTM L7 (Pirituba station). Mostly residential with some industrial. Moderate commute. Affordable.
+PONTE RASA,2,6,5,5,9,9,4,3,6,5,East zone residential near Ermelino Matarazzo. Affordable but limited amenities and long commute.
+RAPOSO TAVARES,4,4,4,5,8,8,6,3,6,5,West-zone residential near Raposo Tavares highway. Car-dependent. Some bus coverage. Affordable option in the west.
+RIO PEQUENO,5,6,5,5,7,7,5,4,6,5,West zone between Lapa and Butantã. Moderate connectivity via bus. Some USP student presence nearby. Reasonable value.
+SACOMÃ,4,4,5,5,8,8,5,4,6,6,South zone (Ipiranga subprefecture). CPTM access. Moderate crime profile. Improving infrastructure but still transitional.
+SÃO DOMINGOS,3,5,5,5,8,8,5,3,7,5,Northwest residential near Pirituba/CPTM. Quiet and affordable. Limited nightlife and urban amenities.
+SÃO MATEUS,2,6,5,5,9,9,5,3,6,5,Far east zone. Bus corridors provide connectivity but commute to Nubank is very long. Affordable working-class area.
+SÃO MIGUEL,1,5,5,5,9,9,4,3,5,6,São Miguel Paulista (L3). Far eastern zone with some safety concerns. Very long commute despite metro access.
+SÃO RAFAEL,1,7,4,6,10,10,4,2,5,4,Far eastern periphery. Very affordable but minimal infrastructure and extreme commute. Not suitable for relocation.
+SAPOPEMBA,2,6,5,5,9,9,5,3,6,5,East zone residential. Affordable but limited amenities. Improving slowly. Long commute to Nubank.
+SOCORRO,2,6,4,6,9,9,7,3,6,5,Far southern zone near Guarapiranga. Some water recreational options. Long commute and limited urban services.
+TREMEMBÉ,3,5,5,5,8,8,8,3,7,5,Northern zone near Serra da Cantareira. Quiet residential. Excellent green space proximity. Family-friendly but long commute.
+VILA ANDRADE,4,4,6,5,6,6,7,5,7,6,South zone near Parque Burle Marx and Morumbi. Growing upscale residential area with malls. Moderate transit options.
+VILA CURUÇÁ,1,6,5,5,10,10,4,3,5,5,Far eastern periphery. Extremely affordable but poor infrastructure and impractical Nubank commute.
+VILA FORMOSA,3,6,6,5,7,7,5,4,7,6,East-zone traditional residential near Aricanduva. Calm neighborhood. Some local commerce on Av. Aricanduva. Moderate commute.
+VILA JACUÍ,2,6,4,6,9,9,5,3,5,5,Far northern periphery. Limited infrastructure. Affordable but not practical for Nubank commute.
+VILA MARIA,3,6,6,5,8,8,5,4,7,6,Northern residential. Vila Maria station (CPTM L11/L12). Stable working-class neighborhood with moderate commute.
+VILA MATILDE,3,6,6,5,7,7,5,4,7,7,Vila Matilde (L3). East-zone residential with direct metro. Moderate commute to Nubank. Stable and affordable.
+VILA MEDEIROS,3,4,5,5,8,8,5,3,7,5,North zone residential. Quiet. Limited urban amenities. Moderate commute. Good family environment.
+VILA PRUDENTE,4,7,6,5,7,7,6,5,7,8,Vila Prudente (L2 eastern terminus). Direct Line 2 to Consolação/Pinheiros direction — one of the best transit values in the east zone. Gentrifying.
+VILA SÔNIA,5,5,6,5,7,7,6,5,7,8,Vila Sônia (L4 Yellow — direct line to Oscar Freire/Nubank via L4). Underrated western residential with the most direct metro link to Nubank outside Pinheiros itself.
+SÃO LUCAS,4,5,6,5,7,7,7,4,7,7,East-zone residential in Vila Prudente subprefecture. Borders Ipiranga and Parque do Estado (large green area nearby). Near Vila Prudente (L2) for direct access to Consolação/Pinheiros direction. Quiet working-class neighborhood with improving infrastructure.
+GUAIANASES,1,4,5,6,10,10,4,2,6,7,Eastern terminus of L3 (alternate spelling used in some GeoJSON sources). Very affordable. metro-connected but commute to Nubank exceeds one hour. Not practical for daily in-office work.
