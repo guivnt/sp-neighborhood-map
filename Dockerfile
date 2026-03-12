@@ -2,7 +2,10 @@ FROM python:3.13-slim
  
 WORKDIR /app
  
-COPY index.html js/ css/ data/ ./
+COPY index.html ./
+COPY js/ ./js/
+COPY css/ ./css/
+COPY data/ ./data/
  
 EXPOSE 8080
  
