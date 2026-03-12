@@ -73,9 +73,6 @@ and `healthcare` columns. The raw data is available at:
 - [Interactive explorer (Shiny App)](https://institutocidadessustentaveis.shinyapps.io/mapadesigualdadesaopaulo2024/)
 - [Data download (xlsx)](https://www.cidadessustentaveis.org.br/arquivos/RNSP/mapa_da_desigualdade_2024_dados.xlsx)
 
-The downloaded dataset is cached locally at
-`data/mapa_desigualdade_2024_distritos.csv` for reproducibility.
-
 ### Indicators used from the Mapa da Desigualdade
 
 | Indicator | Column in mapa CSV | Used for |
@@ -317,27 +314,35 @@ score improvements:
 
 1. **Safety homicide data is from 2020.** The Mapa da Desigualdade 2024 sources
    its homicídios indicator from SIM/SEADE mortality records. 2020 is the most
-   recent year available at district granularity. For 2022–2024 robbery rates by
-   delegacia (police precinct), see the SSP-SP Transparência portal.
+   recent year available at district granularity.
 
-2. **Healthcare score measures public UBS access only.** Districts with low
+2. **Mobile phone robbery is not explicitly scored.** SSP-SP publishes monthly
+   `roubo de celular` counts by delegacia (police precinct), but this was not
+   incorporated. Phone snatching risk does not perfectly track homicide rates —
+   high-footfall central districts (Sé, República, Brás) score low on homicides
+   but are known robbery hotspots. The ±2-point cap on score changes during the
+   audit was intended to preserve this street-level intuition, but the underlying
+   original scores were not derived from formal robbery statistics.
+   See: [SSP-SP — Dados Mensais por Distrito](https://www.ssp.sp.gov.br/estatistica/dados-mensais)
+
+3. **Healthcare score measures public UBS access only.** Districts with low
    scores (e.g. Liberdade, Santana) have poor public primary-care coverage but
    are well served by private clinics and hospitals. The score is most relevant
    for residents relying on the SUS public health system.
 
-3. **Three districts use proxy data.** Vila Madalena (→ Pinheiros proxy),
+4. **Three districts use proxy data.** Vila Madalena (→ Pinheiros proxy),
    Vila Romana (→ Lapa proxy), and Belenzinho (→ Mooca proxy) were absent from
    the Mapa da Desigualdade. Their safety and healthcare scores may be less
    accurate than the 93 directly measured districts.
 
-4. **Rent/buy scores are district-level averages.** Itaim Bibi includes both
+5. **Rent/buy scores are district-level averages.** Itaim Bibi includes both
    the very expensive Vila Olímpia and more affordable pockets. Morumbi spans
    from luxury condos to streets bordering Paraisópolis.
 
-5. **Transit scores reflect the 2024–2025 network.** SP is expanding Lines 5,
+6. **Transit scores reflect the 2024–2025 network.** SP is expanding Lines 5,
    6, 17, 19, and 20. New stations will shift transit scores when they open.
 
-6. **Walkability has no formal per-district index.** Scores are based on urban
+7. **Walkability has no formal per-district index.** Scores are based on urban
    knowledge cross-referenced with the ITDP iCam framework.
 
 ---
