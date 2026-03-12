@@ -450,6 +450,62 @@ html, body {
   padding-top: 8px;
 }
 
+.detail-bairros {
+  margin-top: 10px;
+  border-top: 1px solid var(--sidebar-border);
+  padding-top: 8px;
+}
+
+.detail-bairros-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--nu-purple-light);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bairros-info {
+  position: relative;
+  font-size: 10px;
+  color: var(--text-secondary);
+  cursor: help;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+
+.bairros-info:hover {
+  opacity: 1;
+}
+
+.bairros-info:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 6px);
+  background: var(--nu-dark);
+  border: 1px solid var(--sidebar-border);
+  color: var(--text-secondary);
+  font-size: 9px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  padding: 6px 8px;
+  border-radius: 4px;
+  width: 200px;
+  white-space: normal;
+  line-height: 1.5;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.detail-bairros-list {
+  list-style: none;
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
 /* ============================================================
    Compare Panel
    ============================================================ */

@@ -7,6 +7,7 @@ const GEOJSON_URL =
   'https://raw.githubusercontent.com/codigourbano/distritos-sp/master/distritos-sp.geojson';
 
 const CSV_PATH = 'data/neighborhoods.csv';
+const BAIRROS_PATH = 'data/districts-to-bairros.json';
 
 const DEFAULT_DISTRICT_SCORE = 5;
 
@@ -35,6 +36,7 @@ CRITERIA.forEach(c => { defaultWeights[c.key] = c.weight; });
 // State
 // ============================================================
 let districtData = {};   // key: normalized district name → scores object
+let bairrosData = {};    // key: normalized district name → array of bairro names
 let geoLayer = null;
 let mapOpacity = 0.82;
 
@@ -214,6 +216,14 @@ function showDistrictDetail(rawName, normName) {
     ? `<div class="detail-notes">${district.notes}</div>`
     : '';
 
+  const bairros = bairrosData[normName];
+  const bairrosHTML = bairros && bairros.length > 0
+    ? `<div class="detail-bairros">
+        <h4 class="detail-bairros-title">Neighbourhoods <span class="bairros-info" data-tooltip="Sources: saopauloaqui.com.br, Wikipedia, Prefeitura SP, saopaulobairros.com.br, spbairros.com.br">ⓘ</span></h4>
+        <ul class="detail-bairros-list">${bairros.map(b => `<li>${b}</li>`).join('')}</ul>
+      </div>`
+    : '';
+
   const alreadyAdded = compareDistricts.some(d => d.normName === normName);
   const atMax = compareDistricts.length >= 4 && !alreadyAdded;
   const checkboxHTML = compareMode ? `
@@ -233,6 +243,7 @@ function showDistrictDetail(rawName, normName) {
     ${checkboxHTML}
     <div class="detail-bars">${bars}</div>
     ${notes}
+    ${bairrosHTML}
   `;
 
   if (compareMode) {
@@ -462,6 +473,19 @@ async function loadDefaultCSV() {
   }
 }
 
+async function loadBairros() {
+  try {
+    const resp = await fetch(BAIRROS_PATH);
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const json = await resp.json();
+    Object.entries(json).forEach(([key, val]) => {
+      bairrosData[normalizeName(key)] = val;
+    });
+  } catch (err) {
+    console.warn('Bairros JSON load error:', err);
+  }
+}
+
 // File input handler
 document.getElementById('csv-input').addEventListener('change', function () {
   const file = this.files[0];
@@ -535,8 +559,9 @@ document.getElementById('compare-close-btn').addEventListener('click', () => {
 async function init() {
   buildSliders();
 
-  // Load CSV first (fast, local)
+  // Load CSV + bairros (fast, local)
   await loadDefaultCSV();
+  await loadBairros();
 
   // Load GeoJSON
   try {

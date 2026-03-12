@@ -1,0 +1,838 @@
+{
+  "PINHEIROS": [
+    "Pinheiros",
+    "Jardim das Bandeiras",
+    "Jardim Europa",
+    "Jardim Paulistano",
+    "Jardim Universidade Pinheiros",
+    "Jardins",
+    "Sumarezinho",
+    "Vila Madalena"
+  ],
+  "ALTO DE PINHEIROS": [
+    "Alto de Pinheiros",
+    "Boaçava",
+    "Jardim Atibaia",
+    "Jardim Califórnia",
+    "Jardim dos Jacarandás",
+    "Jardim Lígia",
+    "Sítio Boa Vista",
+    "Vila Beatriz",
+    "Vila Ida",
+    "Vila Jataí",
+    "Vila Nogueira"
+  ],
+  "PERDIZES": [
+    "Perdizes",
+    "Sumaré",
+    "Vila Pompéia",
+    "Vila Anglo Brasileira",
+    "Pacaembu",
+    "Jardim Vera Cruz",
+    "Vila Piauí",
+    "Campos da Escolástica"
+  ],
+  "VILA MADALENA": [
+    "Vila Madalena"
+  ],
+  "JARDIM PAULISTA": [
+    "Jardim Paulista",
+    "Jardim América",
+    "Cerqueira César",
+    "Jardins"
+  ],
+  "CONSOLAÇÃO": [
+    "Consolação",
+    "Higienópolis",
+    "Vila Buarque",
+    "Pacaembu"
+  ],
+  "BELA VISTA": [
+    "Bela Vista",
+    "Bixiga",
+    "Morro dos Ingleses",
+    "Vila Helena"
+  ],
+  "REPÚBLICA": [
+    "República",
+    "Santa Ifigênia",
+    "Anhangabaú",
+    "Centro Novo",
+    "Largo do Arouche"
+  ],
+  "LIBERDADE": [
+    "Liberdade",
+    "Aclimação",
+    "Glicério",
+    "Jardim Aclimação"
+  ],
+  "CAMBUCI": [
+    "Cambuci",
+    "Vila Deodoro"
+  ],
+  "SANTA CECÍLIA": [
+    "Santa Cecília",
+    "Campos Elíseos",
+    "Várzea da Barra Funda",
+    "Vila Buarque"
+  ],
+  "BARRA FUNDA": [
+    "Barra Funda",
+    "Água Branca",
+    "Várzea da Barra Funda",
+    "Vila Barra Funda",
+    "Parque Industrial Tomas Edson",
+    "Vila Chalot",
+    "Vila Charlote",
+    "Vila dos Ferroviários"
+  ],
+  "VILA LEOPOLDINA": [
+    "Vila Leopoldina",
+    "Conjunto Haddad",
+    "Jardim Humaitá",
+    "Jardim São Ricardo",
+    "Parque da Lapa",
+    "Vila Hamburguesa",
+    "Vila Ribeiro de Barros"
+  ],
+  "LAPA": [
+    "Lapa",
+    "Alto da Lapa",
+    "Lapa de Baixo",
+    "Vila Romana",
+    "Vila Ipojuca",
+    "Vila Anastácio",
+    "Bela Aliança",
+    "Siciliano",
+    "Parque Residencial da Lapa",
+    "Vila Argentina",
+    "Vila Augusto",
+    "Vila Bela Aliança",
+    "Vila Carlina"
+  ],
+  "VILA ROMANA": [
+    "Vila Romana"
+  ],
+  "ITAIM BIBI": [
+    "Itaim Bibi",
+    "Vila Olímpia",
+    "Brooklin Novo",
+    "Cidade Monções",
+    "Vila Cordeiro",
+    "Vila Funchal",
+    "Vila Gertrudes",
+    "Chácara Itaim",
+    "Jardim das Acácias"
+  ],
+  "MOEMA": [
+    "Moema",
+    "Indianópolis",
+    "Jardim Lusitânia",
+    "Vila Nova Conceição",
+    "Ibirapuera",
+    "Moema Pássaros",
+    "Moema Índios"
+  ],
+  "CAMPO BELO": [
+    "Campo Belo",
+    "Brooklin Paulista",
+    "Jardim Aeroporto",
+    "Jardim Brasil",
+    "Vila Alexandria",
+    "Vila Carmem",
+    "Vila Congonhas",
+    "Vila Noca",
+    "Nova Piraju"
+  ],
+  "SANTO AMARO": [
+    "Santo Amaro",
+    "Chácara Santo Antônio",
+    "Chácara Flora",
+    "Alto da Boa Vista",
+    "Granja Julieta",
+    "Brooklin",
+    "Jardim Petrópolis",
+    "Chácara Monte Alegre",
+    "Chácara Pouso Alegre",
+    "Chácara São Luís",
+    "Chácara Japonesa",
+    "Jardim Bela Vista",
+    "Jardim Caravelas",
+    "Jardim Cedro do Líbano",
+    "Jardim Cordeiro",
+    "Jardim Dom Bosco",
+    "Jardim Dom José",
+    "Jardim dos Estados",
+    "Jardim Heliomar",
+    "Jardim Hípico",
+    "Jardim Internacional",
+    "Jardim Promissão",
+    "Jardim Santo Amaro",
+    "Jardim Santo Antônio",
+    "Várzea de Baixo",
+    "Vila Cruzeiro",
+    "Vila Elvira",
+    "Vila União"
+  ],
+  "SAÚDE": [
+    "Saúde",
+    "Vila da Saúde",
+    "Bosque da Saúde",
+    "Chácara Inglesa",
+    "Mirandópolis",
+    "Planalto Paulista",
+    "São Judas",
+    "Vila Monte Alegre",
+    "Parque Imperial",
+    "Vila Moraes",
+    "Vila Brasilina",
+    "Vila Araci",
+    "Vila do Bosque",
+    "Vila Noca",
+    "Praça da Árvore"
+  ],
+  "JABAQUARA": [
+    "Jabaquara",
+    "Vila Mascote",
+    "Vila Santa Catarina",
+    "Vila Guarani",
+    "Cidade Vargas",
+    "Americanópolis",
+    "Conceição",
+    "Vila Campestre",
+    "Vila do Encontro",
+    "Jardim Jabaquara",
+    "Jardim Prudência",
+    "Vila Clara",
+    "Vila Canaã",
+    "Cidade Domitila",
+    "Cidade Leonor",
+    "Vila Facchini",
+    "Vila Babilônia",
+    "Vila Paulista",
+    "Vila Mira",
+    "Parque Jabaquara"
+  ],
+  "VILA MARIANA": [
+    "Vila Mariana",
+    "Paraíso",
+    "Vila Clementino",
+    "Chácara Klabin",
+    "Jardim Vila Mariana",
+    "Vila Afonso Celso",
+    "Jardim da Glória",
+    "Jardim Aurélia",
+    "Jardim Lutfalla",
+    "Chácara do Castelo",
+    "Conjunto dos Bancários"
+  ],
+  "BELENZINHO": [
+    "Belém",
+    "Belenzinho",
+    "Catumbi",
+    "Chácara Tatuapé",
+    "Quarta Parada",
+    "Vila Canero",
+    "Vila Maria Zélia"
+  ],
+  "TATUAPÉ": [
+    "Tatuapé",
+    "Parque São Jorge",
+    "Chácara Maranhão",
+    "Chácara Nani",
+    "Cidade Mãe do Céu",
+    "Jardim Alice",
+    "Jardim Textília",
+    "Vila Azevedo",
+    "Vila Brasil",
+    "Vila Gomes Cardim",
+    "Vila Luiza",
+    "Vila Luzitana",
+    "Vila Moreira",
+    "Vila Santo Estevão",
+    "Vila Zilda"
+  ],
+  "MOOCA": [
+    "Mooca",
+    "Alto da Mooca",
+    "Parque da Mooca",
+    "Hipódromo",
+    "Vila Cláudia"
+  ],
+  "BRÁS": [
+    "Brás",
+    "Canindé"
+  ],
+  "BOM RETIRO": [
+    "Bom Retiro",
+    "Luz",
+    "Ponte Pequena"
+  ],
+  "SANTANA": [
+    "Santana",
+    "Água Fria",
+    "Imirim",
+    "Jardim São Paulo",
+    "Santa Teresinha",
+    "Chora Menino",
+    "Vila Pauliceia",
+    "Vila Santana",
+    "Vila Bianca",
+    "Parque Anhembi",
+    "Jardim Guanandi",
+    "Vila Siciliano",
+    "Vila Zélia",
+    "Vila Rabelo",
+    "Vila Santa Luzia",
+    "Vila Matias",
+    "Vila Mariza Mazzei",
+    "Vila José Casa Grande",
+    "Jardim Carmen Verônica",
+    "Sítio Pedra Branca"
+  ],
+  "TUCURUVI": [
+    "Tucuruvi",
+    "Jardim França",
+    "Jardim São Bento",
+    "Parada Inglesa",
+    "Vila Gustavo",
+    "Vila Mazzei"
+  ],
+  "VILA GUILHERME": [
+    "Vila Guilherme",
+    "Vila Maria Baixa",
+    "Jardim Brasil",
+    "Jardim Japão",
+    "Vila Isolina Mazzei"
+  ],
+  "CASA VERDE": [
+    "Casa Verde",
+    "Casa Verde Alta",
+    "Casa Verde Baixa",
+    "Jardim São Bento",
+    "Parque Peruche",
+    "Vila Santa Maria"
+  ],
+  "BUTANTÃ": [
+    "Butantã",
+    "Cidade Universitária",
+    "City Butantã",
+    "Jardim Bonfiglioli",
+    "Jardim Caxingui",
+    "Vila Gomes",
+    "Vila Indiana",
+    "Jardim Peri Peri",
+    "Jardim Pinheiros",
+    "Conjunto Residencial Butantã",
+    "Instituto de Previdência",
+    "Cidade Bandeirantes",
+    "Jardim Ademar",
+    "Jardim Esmeralda",
+    "Jardim Rizzo"
+  ],
+  "MORUMBI": [
+    "Morumbi",
+    "Cidade Jardim",
+    "Real Parque",
+    "Jardim Guedala",
+    "Jardim Leonor",
+    "Jardim Morumbi",
+    "Vila Morumbi",
+    "Fazenda Morumbi",
+    "Paineiras do Morumbi",
+    "Jardim Panorama",
+    "Jardim Panorama D'Oeste",
+    "Jardim Everest",
+    "Jardim D'Oeste",
+    "Jardim Namba",
+    "Jardim Silvia",
+    "Jardim Viana",
+    "Jardim Vitória Régia",
+    "Vila Progredior",
+    "Vila Tramontano"
+  ],
+  "SÉ": [
+    "Sé",
+    "Centro",
+    "Centro Histórico"
+  ],
+  "ÁGUA RASA": [
+    "Água Rasa",
+    "Alto da Mooca",
+    "Quarta Parada",
+    "Vila Regente Feijó",
+    "Vila Invernada",
+    "Vila Bertioga",
+    "Chácara Paraíso",
+    "Vila Lúcia Elvira"
+  ],
+  "ARICANDUVA": [
+    "Aricanduva",
+    "Jardim Santa Teresinha",
+    "Vila Antonieta",
+    "Vila Nova Manchester",
+    "Parque Aricanduva"
+  ],
+  "ARTUR ALVIM": [
+    "Artur Alvim",
+    "Parque Artur Alvim",
+    "Vila Nhocuné"
+  ],
+  "BELÉM": [
+    "Belém",
+    "Belenzinho",
+    "Catumbi",
+    "Chácara Tatuapé",
+    "Quarta Parada",
+    "Vila Canero",
+    "Vila Maria Zélia"
+  ],
+  "BRASILÂNDIA": [
+    "Brasilândia",
+    "Vila Terezinha",
+    "Jardim Damasceno",
+    "Vila Penteado",
+    "Vila Roque"
+  ],
+  "CACHOEIRINHA": [
+    "Cachoeirinha",
+    "Jardim Peri",
+    "Vila Nova Cachoeirinha",
+    "Jardim Vista Alegre",
+    "Jardim Cachoeira"
+  ],
+  "CAMPO GRANDE": [
+    "Campo Grande",
+    "Santo Amaro",
+    "Vila Agueda",
+    "Jardim Miriam",
+    "Jardim Itapura"
+  ],
+  "CAMPO LIMPO": [
+    "Campo Limpo",
+    "Jardim Pirajussara",
+    "Vila Prel",
+    "Parque Arariba",
+    "Jardim Umarizal"
+  ],
+  "CANGAÍBA": [
+    "Cangaíba",
+    "Vila Princesa Isabel",
+    "Jardim Helena",
+    "Vila Progresso"
+  ],
+  "CAPÃO REDONDO": [
+    "Capão Redondo",
+    "Jardim Capão Redondo",
+    "Jardim Macedônia",
+    "Jardim Vaz de Lima"
+  ],
+  "CARRÃO": [
+    "Carrão",
+    "Vila Carrão",
+    "Vila Califórnia",
+    "Vila Diva"
+  ],
+  "CIDADE ADEMAR": [
+    "Cidade Ademar",
+    "Vila Joaniza",
+    "Jardim Selma",
+    "Jardim Apurá"
+  ],
+  "CIDADE DUTRA": [
+    "Cidade Dutra",
+    "Interlagos",
+    "Jardim das Imbuias",
+    "Jardim Santa Bárbara"
+  ],
+  "CIDADE LÍDER": [
+    "Cidade Líder",
+    "Fazenda Aricanduva",
+    "Jardim Arize",
+    "Vila Carmosina"
+  ],
+  "CIDADE TIRADENTES": [
+    "Cidade Tiradentes",
+    "Jardim Vilma Flor",
+    "Jardim São Gonçalo"
+  ],
+  "CURSINO": [
+    "Cursino",
+    "Jardim da Saúde",
+    "Água Funda",
+    "Bosque da Saúde",
+    "Vila Gumercindo",
+    "Vila Moraes",
+    "Vila Brasilina",
+    "Vila Brasílio Machado",
+    "Vila Santo Estéfano",
+    "Vila Nair",
+    "São Salvador",
+    "Jardim Previdência",
+    "Vila Água Funda"
+  ],
+  "ERMELINO MATARAZZO": [
+    "Ermelino Matarazzo",
+    "Parque Boturussu",
+    "Jardim Matarazzo",
+    "Vila Paranaguá"
+  ],
+  "FREGUESIA DO Ó": [
+    "Freguesia do Ó",
+    "Itaberaba",
+    "Parque Itaberaba",
+    "Vila Iório",
+    "Vila Cruz das Almas",
+    "Vila Arcádia",
+    "Vila Hebe",
+    "Vila Bancária Munhoz",
+    "Vila Cardoso",
+    "Vila Cavaton",
+    "Vila Júlio César",
+    "Vila Elisabete",
+    "Vila Hermínia",
+    "Vila Liberlândia",
+    "Vila Lório",
+    "Jardim Bela Vista",
+    "Jardim Cachoeira",
+    "Jardim Adélia",
+    "Vila Acre"
+  ],
+  "GRAJAÚ": [
+    "Grajaú",
+    "Jardim Gaivotas",
+    "Jardim Progresso",
+    "Jardim Reimberg",
+    "Parque Cocaia"
+  ],
+  "IGUATEMI": [
+    "Iguatemi",
+    "Jardim Iguatemi",
+    "Vila do Ré"
+  ],
+  "IPIRANGA": [
+    "Ipiranga",
+    "Vila Carioca",
+    "Jardim da Glória",
+    "Jardim Independência",
+    "Vila Monumento"
+  ],
+  "ITAIM PAULISTA": [
+    "Itaim Paulista",
+    "Vila Curuçá",
+    "Jardim Camargo Novo",
+    "Vila Itaim Paulista"
+  ],
+  "ITAQUERA": [
+    "Itaquera",
+    "Conjunto Habitacional José Bonifácio",
+    "Parque do Carmo",
+    "Vila Campanela",
+    "Vila Carmosina"
+  ],
+  "JAÇANÃ": [
+    "Jaçanã",
+    "Vila Nilo",
+    "Vila Aurora",
+    "Jardim Guapira"
+  ],
+  "JAGUARA": [
+    "Jaguara",
+    "Vila São Francisco",
+    "Parque São Domingos"
+  ],
+  "JAGUARÉ": [
+    "Jaguaré",
+    "Vila Nova Jaguaré",
+    "Centro Industrial do Jaguaré",
+    "Parque Continental",
+    "Vila Graziela",
+    "Vila Lageado",
+    "Super Quadra Jaguaré"
+  ],
+  "JARAGUÁ": [
+    "Jaraguá",
+    "Vila Sol Nascente",
+    "Parque Nações Unidas",
+    "Jardim Rincão"
+  ],
+  "JARDIM ÂNGELA": [
+    "Jardim Ângela",
+    "Jardim Nakamura",
+    "Jardim Kagohara",
+    "Jardim Vera Cruz",
+    "Fundão"
+  ],
+  "JARDIM HELENA": [
+    "Jardim Helena",
+    "Vila Mara",
+    "Jardim Maia",
+    "Vila Jacuí"
+  ],
+  "JARDIM SÃO LUÍS": [
+    "Jardim São Luís",
+    "Paraisópolis",
+    "Jardim Herculano",
+    "Jardim Comercial"
+  ],
+  "JOSÉ BONIFÁCIO": [
+    "José Bonifácio",
+    "Cohab José Bonifácio",
+    "Jardim Bonança"
+  ],
+  "LAJEADO": [
+    "Lajeado",
+    "Jardim Helena",
+    "Jardim Robru",
+    "Vila Cisper"
+  ],
+  "LIMÃO": [
+    "Limão",
+    "Vila do Limão",
+    "Jardim Peri Alto"
+  ],
+  "MANDAQUI": [
+    "Mandaqui",
+    "Vila Mazzei",
+    "Jardim São Paulo",
+    "Conjunto Hospitalar Mandaqui"
+  ],
+  "MARSILAC": [
+    "Marsilac",
+    "Engenheiro Marsilac",
+    "Embura"
+  ],
+  "PARELHEIROS": [
+    "Parelheiros",
+    "Jardim Aladim",
+    "Jardim dos Álamos",
+    "Colônia",
+    "Vargem Grande"
+  ],
+  "PARI": [
+    "Pari",
+    "Canindé",
+    "Jardim Pari"
+  ],
+  "PARQUE DO CARMO": [
+    "Parque do Carmo",
+    "Conjunto José Bonifácio",
+    "Gleba do Pêssego",
+    "Vila Cristália"
+  ],
+  "PEDREIRA": [
+    "Pedreira",
+    "Jardim Pedreira",
+    "Eldorado",
+    "Vila Missionária"
+  ],
+  "PENHA": [
+    "Penha",
+    "Penha de França",
+    "Vila Esperança",
+    "Cangaíba",
+    "Vila Re",
+    "Vila Granada"
+  ],
+  "PERUS": [
+    "Perus",
+    "Jardim Adelfiore",
+    "Vila Fanton",
+    "Vila Perus"
+  ],
+  "ANHANGUERA": [
+    "Anhanguera",
+    "Jardim Anhanguera",
+    "Parque Anhanguera",
+    "Jardim Britânia",
+    "Parque Morro Doce",
+    "Morada do Sol",
+    "Jardim Jaraguá",
+    "Vila Jaraguá",
+    "Chácara Jaraguá",
+    "Jardim Escócia",
+    "Jardim Rosinha",
+    "Vila dos Palmares",
+    "Vila Chica Luiza",
+    "Jardim Clei",
+    "Parque Esperança",
+    "Conjunto Residencial Canaã",
+    "Conjunto Residencial Paraíso",
+    "Residencial Sol Nascente"
+  ],
+  "PIRITUBA": [
+    "Pirituba",
+    "Vila Mangalot",
+    "Jardim Iris",
+    "Vila Zatt",
+    "Vila Jaguara",
+    "Parque São Domingos"
+  ],
+  "PONTE RASA": [
+    "Ponte Rasa",
+    "Jardim Ponte Rasa",
+    "Vila Talarico"
+  ],
+  "RAPOSO TAVARES": [
+    "Raposo Tavares",
+    "Cohab Raposo Tavares",
+    "Cohab Educandário",
+    "Jardim Raposo Tavares",
+    "Vila Albano"
+  ],
+  "RIO PEQUENO": [
+    "Rio Pequeno",
+    "Jardim Adalgisa",
+    "Jardim Jussara",
+    "Vila Dalva",
+    "Vila Lageado"
+  ],
+  "SACOMÃ": [
+    "Sacomã",
+    "Heliópolis",
+    "Jardim Patente",
+    "Jardim Patente Novo",
+    "Jardim Independência",
+    "Vila Heliópolis",
+    "Parque Bristol",
+    "Jardim Ana Maria",
+    "Jardim Seckler",
+    "Jardim Tropical"
+  ],
+  "SÃO DOMINGOS": [
+    "São Domingos",
+    "Parque São Domingos",
+    "Vila Clarice",
+    "Jardim City Pirituba"
+  ],
+  "SÃO MATEUS": [
+    "São Mateus",
+    "Jardim Iguatemi",
+    "São Rafael",
+    "Jardim Tietê"
+  ],
+  "SÃO MIGUEL": [
+    "São Miguel Paulista",
+    "Vila Jacuí",
+    "Vila Nitro Operária"
+  ],
+  "SÃO RAFAEL": [
+    "São Rafael",
+    "Jardim São Rafael",
+    "Fazenda da Juta"
+  ],
+  "SAPOPEMBA": [
+    "Sapopemba",
+    "Jardim Sapopemba",
+    "Vila Ema",
+    "Vila Babilônia",
+    "Jardim Adutora"
+  ],
+  "SOCORRO": [
+    "Socorro",
+    "Interlagos",
+    "Capela do Socorro",
+    "Jardim Guarapiranga",
+    "Veleiros",
+    "Jardim Ipanema",
+    "Jardim do Lago",
+    "Jardim Suzana",
+    "Jardim São Jorge",
+    "Vila Friburgo",
+    "Vila Lisboa",
+    "Vila Socorro",
+    "Parque Interlagos",
+    "Parque Rony",
+    "Jardim Bessa",
+    "Jardim Cristina",
+    "Jardim Mara",
+    "Jardim Marabá",
+    "Jardim Paquetá",
+    "Jardim Três Marias",
+    "Jardim Veneza",
+    "Vila Franca"
+  ],
+  "TREMEMBÉ": [
+    "Tremembé",
+    "Jardim Tremembé",
+    "Vila Albertina",
+    "Jardim Virginia"
+  ],
+  "VILA ANDRADE": [
+    "Vila Andrade",
+    "Panamby",
+    "Paraisópolis",
+    "Jardim Parque Morumbi",
+    "Parque Burle Marx"
+  ],
+  "VILA CURUÇÁ": [
+    "Vila Curuçá",
+    "Jardim Curuçá",
+    "Jardim Romano"
+  ],
+  "VILA FORMOSA": [
+    "Vila Formosa",
+    "Jardim Anália Franco",
+    "Jardim Têxtil",
+    "Vila Santa Isabel",
+    "Chácara Belenzinho"
+  ],
+  "VILA JACUÍ": [
+    "Vila Jacuí",
+    "Jardim Star",
+    "Jardim São Martinho"
+  ],
+  "VILA MARIA": [
+    "Vila Maria",
+    "Vila Maria Alta",
+    "Vila Maria Baixa",
+    "Parque Novo Mundo",
+    "Jardim Japão"
+  ],
+  "VILA MATILDE": [
+    "Vila Matilde",
+    "Vila Esperança",
+    "Vila Talarico"
+  ],
+  "VILA MEDEIROS": [
+    "Vila Medeiros",
+    "Jardim Brasil",
+    "Vila Sabrina",
+    "Vila Nivi"
+  ],
+  "VILA PRUDENTE": [
+    "Vila Prudente",
+    "Vila Alpina",
+    "Vila Zelina",
+    "Jardim Avelino",
+    "Parque Vila Prudente",
+    "Vila Bela",
+    "Vila Califórnia",
+    "Vila Lúcia",
+    "Olaria",
+    "Quinta da Paineira",
+    "Altos de Vila Prudente",
+    "Jardim Ibitirama",
+    "Sítio da Figueira"
+  ],
+  "VILA SÔNIA": [
+    "Vila Sônia",
+    "Jardim Colombo",
+    "Jardim Boa Vista",
+    "Super Quadra Morumbi",
+    "Jardim Rolinópolis"
+  ],
+  "SÃO LUCAS": [
+    "São Lucas",
+    "Parque São Lucas",
+    "Jardim Avelino",
+    "Vila Ema",
+    "Vila Alpina"
+  ],
+  "GUAIANASES": [
+    "Guaianases",
+    "Vila ABC",
+    "Jardim São Paulo",
+    "Jardim Aurora"
+  ]
+}
